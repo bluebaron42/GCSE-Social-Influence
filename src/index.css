@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;800&family=Playfair+Display:ital,wght@0,700;1,400&family=Anton&family=Permanent+Marker&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-black text-gray-100 overflow-hidden font-sans;
+}
+
+/* Font Classes */
+.font-retro { font-family: 'Press Start 2P', cursive; }
+.font-cyber { font-family: 'Orbitron', sans-serif; }
+.font-headline { font-family: 'Anton', sans-serif; }
+.font-marker { font-family: 'Permanent Marker', cursive; }
+.text-mono { font-family: 'JetBrains Mono', monospace; }
+.text-display { font-family: 'Playfair Display', serif; letter-spacing: -1px; }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes pulse-blue {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.animate-pulse-blue {
+  animation: pulse-blue 3s infinite;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pop {
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.bg-glass {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Neon Effects */
+.neon-border {
+  border: 1px solid #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+
+.text-neon {
+  text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+}
+
+.neon-text {
+  text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+/* Neon glow by color */
+.glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); }
+.glow-amber { box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); }
+.glow-green { box-shadow: 0 0 20px rgba(34, 197, 94, 0.4); }
+.glow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+
+.retro-scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.03)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.blueprint-grid {
+  background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dense-text {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+@keyframes pulse-neon {
+  0%, 100% { box-shadow: 0 0 10px currentColor, 0 0 20px currentColor; }
+  50% { box-shadow: 0 0 20px currentColor, 0 0 40px currentColor; }
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px 0px #ef4444, -2px -2px 0px #3b82f6; }
+  25% { text-shadow: -2px 2px 0px #ef4444, 2px -2px 0px #3b82f6; }
+  50% { text-shadow: 2px -2px 0px #ef4444, -2px 2px 0px #3b82f6; }
+  75% { text-shadow: -2px -2px 0px #ef4444, 2px 2px 0px #3b82f6; }
+  100% { text-shadow: 2px 2px 0px #ef4444, -2px -2px 0px #3b82f6; }
+}
+
+.animate-glitch {
+  animation: glitch 0.3s infinite;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.text-display {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -1px;
+}
+
+.underline-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+}
